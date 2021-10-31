@@ -31,7 +31,7 @@ public class Solution {
 
     public static void main(String[] args) {
 //        for (int i = 1; i <= 20; i++) {
-        System.out.println(Solution.countAndSay(6));
+        //System.out.println(com.company.etc.infy.Solution.countAndSay(6));
 //        }
 
     }
