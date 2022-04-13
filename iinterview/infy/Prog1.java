@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Prog1 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] arr = Arrays.stream(br.readLine().trim().split(" ")).parallel().mapToInt(Integer::parseInt).toArray();
+        int[] arr = Arrays.stream(br.readLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
         int inf = Integer.parseInt(br.readLine());
         System.out.println(minNum(0, 0, inf, arr));
     }
