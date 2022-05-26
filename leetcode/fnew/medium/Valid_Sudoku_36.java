@@ -7,6 +7,7 @@ import java.util.Set;
  * @author Shubzz-02
  */
 public class Valid_Sudoku_36 {
+
     public static void main(String[] args) {
         char[][] arr = new char[][]{
                 {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
