@@ -10,7 +10,7 @@ public class Remove_Nth_Node_From_End_of_List_19 {
             if (remove.next != null) {
                 System.out.print(remove.val + " --> ");
             } else {
-                System.out.println(remove.val + " ---_");
+                System.out.println(remove.val + " --_");
             }
             remove = remove.next;
         }
