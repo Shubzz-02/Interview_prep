@@ -1,4 +1,6 @@
-package com.company.explore.BinarySearchTree.TraverseATree;
+package com.company.com.company.explore.BinaryTree.Recursive;
+
+import com.company.com.company.explore.BinaryTree.model.TreeNode;
 
 public class _104_Maximum_Depth_of_Binary_Tree {
 

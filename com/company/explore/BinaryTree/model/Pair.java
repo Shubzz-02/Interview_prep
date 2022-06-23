@@ -1,4 +1,4 @@
-package com.company.explore.BinarySearchTree.TraverseATree;
+package com.company.com.company.explore.BinaryTree.model;
 
 public class Pair<K, V> {
 

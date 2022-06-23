@@ -1,5 +1,6 @@
-package com.company.explore.BinarySearchTree.TraverseATree;
+package com.company.com.company.explore.BinaryTree.TraverseATree;
 
+import com.company.com.company.explore.BinaryTree.model.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
