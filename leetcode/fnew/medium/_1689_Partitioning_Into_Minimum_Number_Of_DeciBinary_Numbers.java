@@ -1,7 +1,5 @@
 package com.company.leetcode.fnew.medium;
 
-import java.util.Arrays;
-
 public class _1689_Partitioning_Into_Minimum_Number_Of_DeciBinary_Numbers {
 
     public static void main(String[] args) {
