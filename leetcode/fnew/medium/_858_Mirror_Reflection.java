@@ -17,7 +17,7 @@ public class _858_Mirror_Reflection {
         if (ext % 2 == 0 && (ref % 2) != 0) {
             return 0;
         }
-        if (ext % 1 == 1 && ref % 2 == 0) {
+        if (ext % 2 == 1 && ref % 2 == 0) {
             return 2;
         }
         if (ext % 2 == 1 && ref % 2 != 0) {
