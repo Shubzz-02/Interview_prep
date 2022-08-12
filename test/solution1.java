@@ -15,20 +15,20 @@ public class solution1 {
             int n = Integer.parseInt(bufferedReader.readLine().trim());
             int[] totalVolume = Arrays.stream(bufferedReader.readLine().trim().split(" "))
                     .mapToInt(Integer::parseInt).toArray();
-            int[] initialWater = Arrays.stream(bufferedReader.readLine().trim().split(" "))
+            int[] initialAcid = Arrays.stream(bufferedReader.readLine().trim().split(" "))
                     .mapToInt(Integer::parseInt).toArray();
 
-            int[] ans = solve(n, totalVolume, initialWater);
+            int[] ans = solve(n, totalVolume, initialAcid);
             System.out.println(ans[1] + " " + ans[0]);
         }
     }
 
-    private static int[] solve(int n, int[] totalVolume, int[] initialOil) {
+    private static int[] solve(int n, int[] totalVolume, int[] initialAcid) {
 
-        int totalOilCollected = initialOil[0];
+        int totalOilCollected = initialAcid[0];
         int totalOilSpilled = 0;
         for (int i = 1; i < totalVolume.length; i++) {
-            totalOilCollected += initialOil[i];
+            totalOilCollected += initialAcid[i];
             if (totalOilCollected > totalVolume[i]) {
                 int cs = totalOilCollected - totalVolume[i];
                 totalOilSpilled += cs;
