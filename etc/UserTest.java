@@ -32,6 +32,7 @@ public class UserTest {
                 if (anInt == 1) {
                     count++;
                 }
+
             }
         }
         return count;
