@@ -5,13 +5,13 @@ import java.util.Arrays;
 public class _238_Product_of_Array_Except_Self {
 
     public static void main(String[] args) {
-        int[] num = {1, 2, 3, 4};
+        int[] num = {-1, 1, 0, -3, 3};
 
         System.out.println(
                 Arrays.toString(new _238_Product_of_Array_Except_Self().productExceptSelf(num)));
     }
 
-    public int[] productExceptSelf(int[] nums) {
+    public int[] productExceptSelf_ON_SPACE(int[] nums) {
 
         int[] prefix = new int[nums.length];
         int[] postfix = new int[nums.length];
@@ -36,5 +36,23 @@ public class _238_Product_of_Array_Except_Self {
 
         return ans;
     }
+
+    public int[] productExceptSelf(int[] nums) {
+
+        int left = 1;
+        int[] right = new int[nums.length];
+        right[nums.length - 1] = 1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            right[i] = nums[i + 1] * right[i + 1];
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            right[i] = right[i] * left;
+            left *= nums[i];
+        }
+
+        return right;
+    }
+
 
 }
