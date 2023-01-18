@@ -1,17 +1,52 @@
 package com.company.leetcode.fnew.medium;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class _128_Longest_Consecutive_Sequence {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        int[] nums = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int[] nums = Arrays.stream(br.readLine().trim().split(",")).mapToInt(Integer::parseInt)
+                .toArray();
         System.out.println(new _128_Longest_Consecutive_Sequence().longestConsecutive(nums));
 
     }
 
-    public int longestConsecutive(int[] nums) {
+    public int longestConsecutive(int... nums) {
+        int longestConsecutive = 0;
+
+        Set<Integer> set = new HashSet<>();
+        for (int k : nums) {
+            set.add(k);
+        }
+
+        for (int num : nums) {
+            int count = 0;
+            if (set.contains(num) && !set.contains(num - 1)) {
+                count++;
+                int j = num + 1;
+                while (j <= (int) Math.pow(10, 9) && j >= (-1) * (int) Math.pow(10, 9)) {
+                    if (set.contains(j)) {
+                        j++;
+                        count++;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            longestConsecutive = Math.max(count, longestConsecutive);
+        }
+        return longestConsecutive;
+    }
+
+    public int longestConsecutive_ONLOGN(int[] nums) {
 
         if (nums.length == 0) {
             return 0;
