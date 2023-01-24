@@ -7,7 +7,7 @@ public class _22_Generate_Parentheses {
 
     public static void main(String[] args) {
 
-        List<String> list ;
+        List<String> list;
         list = new _22_Generate_Parentheses().generateParenthesis(3);
         System.out.println(list);
         System.out.println(list.size());
