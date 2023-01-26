@@ -13,7 +13,7 @@ public class _1299_Replace_Elements_with_Greatest_Element_on_Right_Side {
                                 arr)));
     }
 
-    public int[] replaceElements(int[] arr) {
+    public int[] replaceElementsMonotonicStack(int[] arr) {
         int[] ans = new int[arr.length];
 
         ans[arr.length - 1] = -1;
@@ -27,6 +27,19 @@ public class _1299_Replace_Elements_with_Greatest_Element_on_Right_Side {
         }
 
         return ans;
+    }
+
+
+    public int[] replaceElements(int[] arr) {
+
+        int msf = arr[arr.length - 1];
+        arr[arr.length - 1] = -1;
+        for (int i = arr.length - 2; i >= 0; i--) {
+            int temp = arr[i];
+            arr[i] = msf;
+            msf = Math.max(temp, msf);
+        }
+        return arr;
     }
 
 }
