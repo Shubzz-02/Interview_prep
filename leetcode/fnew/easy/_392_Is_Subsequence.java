@@ -1,4 +1,4 @@
-package com.company.leetcode.easy;
+package com.company.leetcode.fnew.easy;
 
 public class _392_Is_Subsequence {
 
