@@ -1,9 +1,13 @@
 package com.company.etc;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.Stack;
 
 public class BalanceBracket {
+
     public static void main(String[] argh) {
         Scanner sc = new Scanner(System.in);
 
@@ -26,26 +30,30 @@ public class BalanceBracket {
             } else if (!stack.isEmpty()) {
                 switch (ch) {
                     case '}':
-                        if (stack.peek() == '{')
+                        if (stack.peek() == '{') {
                             stack.pop();
-                        else
+                        } else {
                             return false;
+                        }
                         break;
                     case ']':
-                        if (stack.peek() == '[')
+                        if (stack.peek() == '[') {
                             stack.pop();
-                        else
+                        } else {
                             return false;
+                        }
                         break;
                     case ')':
-                        if (stack.peek() == '(')
+                        if (stack.peek() == '(') {
                             stack.pop();
-                        else
+                        } else {
                             return false;
+                        }
                         break;
                 }
-            }else
+            } else {
                 return false;
+            }
         }
 
         return stack.isEmpty();
