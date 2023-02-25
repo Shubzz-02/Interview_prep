@@ -1,5 +1,9 @@
 package com.company.leetcode.fnew.medium;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 public class _560_Subarray_Sum_Equals_K {
 
     public static void main(String[] args) {
@@ -10,27 +14,18 @@ public class _560_Subarray_Sum_Equals_K {
 
     public int subarraySum(int[] nums, int k) {
 
-        int[] prefix = new int[nums.length];
-        int ps = 0;
-        for (int i = 0; i < nums.length; i++) {
-            prefix[i] = ps + nums[i];
-            ps = prefix[i];
-
-        }
-        int total = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                int sum = prefix[j];
-                if (i > 0) {
-                    sum -= prefix[i - 1];
-                }
-
-                if (sum == k) {
-                    total++;
-                }
+        int sum = 0;
+        int ans = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+        for (int num : nums) {
+            sum += num;
+            if (map.containsKey(sum - k)) {
+                ans += map.get(sum - k);
             }
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
-        return total;
+        return ans;
     }
 
 }
